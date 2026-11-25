@@ -1,0 +1,15 @@
+{
+  "name": "lab6-express-pwa",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №6: Введение в Node.js и базовый сервер на Express (Вариант 20: API статуса сервера)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["express", "node", "pwa", "service-worker"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

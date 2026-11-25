@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Лабораторная работа №6: Express сервер и PWA приложение со статусом сервера">
+  <title>Статус сервера | Лабораторная работа №6</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/icons/icon-192.png" alt="Логотип" class="logo-icon">
+        <span>ServerStatus PWA</span>
+      </a>
+      <nav>
+        <a href="/" class="active">Главная</a>
+        <a href="/about">О себе</a>
+        <a href="/api/status" target="_blank">API статуса</a>
+      </nav>
+      <div class="network-badge" id="networkBadge">
+        <span id="networkText">Онлайн</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title">Мониторинг сервера (Вариант 20)</h1>
+        <button id="installBtn" class="btn-secondary">Установить PWA</button>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        Данные обновляются в реальном времени через эндпоинт <code>/api/status</code> на Express. Приложение кэширует статику в Service Worker и работает офлайн.
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="metric-label">Время работы (Uptime)</div>
+          <div class="metric-value"><span id="uptimeVal">—</span><span class="metric-unit">сек</span></div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Использование памяти</div>
+          <div class="metric-value"><span id="memoryVal">—</span><span class="metric-unit">МБ</span></div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Ядер процессора</div>
+          <div class="metric-value"><span id="cpuVal">—</span><span class="metric-unit">шт</span></div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">Временная метка</div>
+          <div class="metric-value" style="font-size: 1.1rem; padding-top: 0.5rem;"><span id="timestampVal">—</span></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="refreshBtn">Обновить данные</button>
+        <a href="/api/status" class="btn btn-secondary" target="_blank">Открыть JSON ответ</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">JSON-ответ от <code>/api/status</code></h2>
+      <pre><code id="rawJson">Загрузка данных с сервера...</code></pre>
+    </div>
+  </main>
+
+  <footer>
+    <p>Лабораторная работа №6. Введение в Node.js и базовый сервер на Express. Вариант 20.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

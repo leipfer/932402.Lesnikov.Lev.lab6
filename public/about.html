@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Лабораторная работа №6: Информация о студенте и проекте">
+  <title>О себе | Лабораторная работа №6</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/icons/icon-192.png" alt="Логотип" class="logo-icon">
+        <span>ServerStatus PWA</span>
+      </a>
+      <nav>
+        <a href="/">Главная</a>
+        <a href="/about" class="active">О себе</a>
+        <a href="/api/status" target="_blank">API статуса</a>
+      </nav>
+      <div class="network-badge" id="networkBadge">
+        <span id="networkText">Онлайн</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title">О себе</h1>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        Страница с информацией об авторе и описанием выполненной лабораторной работы.
+      </p>
+
+      <table class="info-table">
+        <tbody>
+          <tr>
+            <th>Дисциплина</th>
+            <td>Веб-технологии</td>
+          </tr>
+          <tr>
+            <th>Лабораторная работа</th>
+            <td>№6. Введение в Node.js и базовый сервер на Express</td>
+          </tr>
+          <tr>
+            <th>Вариант</th>
+            <td>Вариант 20. Тема «API статуса сервера» (расширенный)</td>
+          </tr>
+          <tr>
+            <th>Цель работы</th>
+            <td>Освоить запуск Node.js-приложений, работу с модулями, создание простого HTTP-сервера, а также превращение статического сайта в PWA (устанавливаемое приложение с офлайн-режимом).</td>
+          </tr>
+          <tr>
+            <th>Реализованные маршруты</th>
+            <td>
+              <code>GET /</code> - главная страница<br>
+              <code>GET /about</code> - страница «О себе»<br>
+              <code>GET /api/status</code> - JSON-ответ со статусом сервера
+            </td>
+          </tr>
+          <tr>
+            <th>PWA возможности</th>
+            <td>
+              Подключен манифест <code>manifest.json</code> с иконками 192x192 и 512x512.<br>
+              Зарегистрирован Service Worker (<code>sw.js</code>), обеспечивающий кеширование статических ресурсов и работу приложения в офлайн-режиме.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="actions" style="margin-top: 1.5rem;">
+        <a href="/" class="btn">Вернуться на главную</a>
+        <a href="/api/status" class="btn btn-secondary" target="_blank">Проверить /api/status</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Лабораторная работа №6. Введение в Node.js и базовый сервер на Express. Вариант 20.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
