@@ -41,3 +41,12 @@
 5. Открыть `/api/status` (можно также проверить query-параметры `?type=rss` и `?raw=true`) и убедиться, что возвращается JSON с полями `uptimeSeconds`, `memoryUsageMB`, `cpuCount`, `timestamp`.
 6. Открыть DevTools (`F12`), перейти во вкладку Application, проверить подключение `manifest.json` и регистрацию Service Worker (`sw.js`).
 7. Включить режим Offline в DevTools и перезагрузить страницу, чтобы убедиться, что статические страницы открываются в офлайн-режиме.
+
+## Демонстрация работы
+Обычный режим:
+<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/f16a2e9f-0b5b-425c-b536-9ddbd2871e58" />
+
+PWA:
+<img width="1918" height="1020" alt="image" src="https://github.com/user-attachments/assets/f1f564b1-6f15-4e2f-a230-01dc7b76d57a" />
+
+
